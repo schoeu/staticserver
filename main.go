@@ -8,25 +8,24 @@ import (
 )
 
 func index(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello golang static server!")
+	fmt.Fprintf(w, "I'm ready for that, you know.")
 }
 
 func main() {
-	var prefix, path, port string
-	flag.StringVar(&path, "path", "", "Path to files direction.")
-	flag.StringVar(&prefix, "prefix", "", "Prefix of url path.")
+	var prefix, filePath, port string
+	flag.StringVar(&filePath, "path", "", "Path to files direction.")
+	flag.StringVar(&prefix, "prefix", "/static/", "Prefix of url path.")
 	flag.StringVar(&port, "port", "8910", "Static server port.")
 	flag.Parse()
 
-	if path == "" {
+	if filePath == "" {
 		log.Fatal("Need path of files direction.")
 	}
 
-
+	// index page.
     http.HandleFunc("/", index)
 
-    // 设置静态目录
-    fsh := http.FileServer(http.Dir(path))
+    fsh := http.FileServer(http.Dir(filePath))
     http.Handle(prefix, http.StripPrefix(prefix, fsh))
 
     err := http.ListenAndServe(":" + port, nil)
