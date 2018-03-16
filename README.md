@@ -24,18 +24,45 @@ Run `./staticserver --help` command you can get full information for use the sta
 
 ```
 ./staticserver. --help
+
+Output:
+
+Usage of ./staticserver_mac:
+  -help string
+        help info for staticserver
+  -path string
+        Path to files direction.
+  -port string
+        Static server port. (default "8910")
+  -prefix string
+        Prefix of url path. (default "/static/")
+
 ```
+
+
 
 ## Example
 ```
 ./staticserver --path /Users/memee/Downloads/svn/
 ```
+now require url `http://localhost:8910/static`
+
+```
+./staticserver --path /Users/memee/Downloads/svn  --prefix tmpfiles
+```
+now require url `http://localhost:8910/tmpfiles`
+
+```
+./staticserver --path ../somepath   --port 8888
+```
+now require url `http://localhost:8888/static`
+
 then it can show you the files in this path.
 
 
 ## MIT License
 
-Copyright (c) 2017 Schoeu
+Copyright (c) 2018 Schoeu
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

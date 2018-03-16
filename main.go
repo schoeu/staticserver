@@ -2,9 +2,9 @@ package main
 
 import (
     "fmt"
-	"log"
 	"flag"
-    "net/http"
+	"net/http"
+	"strings"
 )
 
 func index(w http.ResponseWriter, r *http.Request) {
@@ -20,17 +20,25 @@ func main() {
 	flag.Parse()
 
 	if filePath == "" {
-		log.Fatal("Need path of files direction.")
+		fmt.Println("Need path of files direction.")
+		return
 	}
 
 	// index page.
     http.HandleFunc("/", index)
 
-    fsh := http.FileServer(http.Dir(filePath))
+	fsh := http.FileServer(http.Dir(filePath))
+	prefix = pathProcess(prefix)
     http.Handle(prefix, http.StripPrefix(prefix, fsh))
 
     err := http.ListenAndServe(":" + port, nil)
     if err != nil {
-        log.Fatal("ListenAndServe: ", err)
+        fmt.Println("ListenAndServe: ", err)
     }
+}
+
+// trans prefix
+func pathProcess(p string) string{
+	purePrefix := strings.Replace(p, "/", "", -1)
+	return "/" + purePrefix + "/"
 }
