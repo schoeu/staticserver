@@ -12,11 +12,11 @@ static file server in Golang.
 
 Choose the version of your computer system and download it, then copy it to the server which you want to control.
 
-- [linux-32bit](http://ozo2fe2cm.bkt.clouddn.com/staticserver_32bit)
-- [linux-64bit](http://ozo2fe2cm.bkt.clouddn.com/staticserver_64bit)
-- [MAC](http://ozo2fe2cm.bkt.clouddn.com/staticserver_mac)
-- [windows-32bit](http://ozo2fe2cm.bkt.clouddn.com/staticserver_32bit.exe)
-- [windows-64bit](http://ozo2fe2cm.bkt.clouddn.com/staticserver_64bit.exe)
+- [linux-32bit](http://qiniucdn.schoeu.com/staticserver_32bit)
+- [linux-64bit](http://qiniucdn.schoeu.com/staticserver_64bit)
+- [MAC](http://qiniucdn.schoeu.com/staticserver_mac)
+- [windows-32bit](http://qiniucdn.schoeu.com/staticserver_32bit.exe)
+- [windows-64bit](http://qiniucdn.schoeu.com/staticserver_64bit.exe)
 
 ## Help
 
